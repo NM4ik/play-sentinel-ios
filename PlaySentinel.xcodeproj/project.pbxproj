@@ -7,18 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E41095B2BAC426C003DA93B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3E41095A2BAC426C003DA93B /* FirebaseAuth */; };
+		3E41095F2BAC42DE003DA93B /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E41095E2BAC42DE003DA93B /* AuthenticationView.swift */; };
+		3E4109622BAC441E003DA93B /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4109612BAC441E003DA93B /* SignInEmailView.swift */; };
+		3E4109662BAC478C003DA93B /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4109652BAC478C003DA93B /* AuthenticationRepository.swift */; };
+		3E4109682BAC4C9F003DA93B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4109672BAC4C9F003DA93B /* RootView.swift */; };
+		3E41096B2BAC4EE8003DA93B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E41096A2BAC4EE8003DA93B /* SettingsView.swift */; };
 		3EA244662BAB4736002A82A3 /* PlaySentinelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA244652BAB4736002A82A3 /* PlaySentinelApp.swift */; };
 		3EA244682BAB4736002A82A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA244672BAB4736002A82A3 /* ContentView.swift */; };
 		3EA2446A2BAB4738002A82A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA244692BAB4738002A82A3 /* Assets.xcassets */; };
 		3EA2446D2BAB4738002A82A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA2446C2BAB4738002A82A3 /* Preview Assets.xcassets */; };
+		3EA244742BAB4818002A82A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EA244732BAB4818002A82A3 /* GoogleService-Info.plist */; };
+		3EA244772BAB48E8002A82A3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3EA244762BAB48E8002A82A3 /* FirebaseAnalytics */; };
+		3EA244792BAB48E8002A82A3 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3EA244782BAB48E8002A82A3 /* FirebaseAnalyticsSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E41095E2BAC42DE003DA93B /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		3E4109612BAC441E003DA93B /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
+		3E4109652BAC478C003DA93B /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
+		3E4109672BAC4C9F003DA93B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		3E41096A2BAC4EE8003DA93B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3EA244622BAB4736002A82A3 /* PlaySentinel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySentinel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA244652BAB4736002A82A3 /* PlaySentinelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySentinelApp.swift; sourceTree = "<group>"; };
 		3EA244672BAB4736002A82A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3EA244692BAB4738002A82A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EA2446C2BAB4738002A82A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3EA244732BAB4818002A82A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +41,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA244792BAB48E8002A82A3 /* FirebaseAnalyticsSwift in Frameworks */,
+				3E41095B2BAC426C003DA93B /* FirebaseAuth in Frameworks */,
+				3EA244772BAB48E8002A82A3 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E4109592BAC426C003DA93B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E41095C2BAC42C1003DA93B /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				3E4109632BAC4761003DA93B /* Data */,
+				3E41095D2BAC42C7003DA93B /* View */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		3E41095D2BAC42C7003DA93B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E4109692BAC4ED6003DA93B /* Settings */,
+				3E4109602BAC440D003DA93B /* Auth */,
+				3E4109672BAC4C9F003DA93B /* RootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E4109602BAC440D003DA93B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3E41095E2BAC42DE003DA93B /* AuthenticationView.swift */,
+				3E4109612BAC441E003DA93B /* SignInEmailView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3E4109632BAC4761003DA93B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3E4109642BAC477D003DA93B /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3E4109642BAC477D003DA93B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3E4109652BAC478C003DA93B /* AuthenticationRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3E4109692BAC4ED6003DA93B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3E41096A2BAC4EE8003DA93B /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		3EA244592BAB4736002A82A3 = {
 			isa = PBXGroup;
 			children = (
 				3EA244642BAB4736002A82A3 /* PlaySentinel */,
 				3EA244632BAB4736002A82A3 /* Products */,
+				3E4109592BAC426C003DA93B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,7 +129,9 @@
 		3EA244642BAB4736002A82A3 /* PlaySentinel */ = {
 			isa = PBXGroup;
 			children = (
+				3E41095C2BAC42C1003DA93B /* Feature */,
 				3EA244652BAB4736002A82A3 /* PlaySentinelApp.swift */,
+				3EA244732BAB4818002A82A3 /* GoogleService-Info.plist */,
 				3EA244672BAB4736002A82A3 /* ContentView.swift */,
 				3EA244692BAB4738002A82A3 /* Assets.xcassets */,
 				3EA2446B2BAB4738002A82A3 /* Preview Content */,
@@ -83,6 +163,11 @@
 			dependencies = (
 			);
 			name = PlaySentinel;
+			packageProductDependencies = (
+				3EA244762BAB48E8002A82A3 /* FirebaseAnalytics */,
+				3EA244782BAB48E8002A82A3 /* FirebaseAnalyticsSwift */,
+				3E41095A2BAC426C003DA93B /* FirebaseAuth */,
+			);
 			productName = PlaySentinel;
 			productReference = 3EA244622BAB4736002A82A3 /* PlaySentinel.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 3EA244592BAB4736002A82A3;
+			packageReferences = (
+				3EA244752BAB48E8002A82A3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 3EA244632BAB4736002A82A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +215,7 @@
 			files = (
 				3EA2446D2BAB4738002A82A3 /* Preview Assets.xcassets in Resources */,
 				3EA2446A2BAB4738002A82A3 /* Assets.xcassets in Resources */,
+				3EA244742BAB4818002A82A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E41096B2BAC4EE8003DA93B /* SettingsView.swift in Sources */,
 				3EA244682BAB4736002A82A3 /* ContentView.swift in Sources */,
 				3EA244662BAB4736002A82A3 /* PlaySentinelApp.swift in Sources */,
+				3E4109682BAC4C9F003DA93B /* RootView.swift in Sources */,
+				3E41095F2BAC42DE003DA93B /* AuthenticationView.swift in Sources */,
+				3E4109662BAC478C003DA93B /* AuthenticationRepository.swift in Sources */,
+				3E4109622BAC441E003DA93B /* SignInEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +438,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3EA244752BAB48E8002A82A3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.23.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3E41095A2BAC426C003DA93B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EA244752BAB48E8002A82A3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		3EA244762BAB48E8002A82A3 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EA244752BAB48E8002A82A3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3EA244782BAB48E8002A82A3 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EA244752BAB48E8002A82A3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3EA2445A2BAB4736002A82A3 /* Project object */;
 }

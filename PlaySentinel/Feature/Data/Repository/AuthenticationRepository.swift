@@ -21,6 +21,11 @@ struct AuthDataResultModel {
     }
 }
 
+enum AuthProviderOption : String {
+    case email = "password"
+    case google = "google.com"
+}
+
 
 final class AuthenticationRepository {
     static let shared = AuthenticationRepository()
@@ -37,6 +42,30 @@ final class AuthenticationRepository {
         return AuthDataResultModel(user: user)
     }
     
+    func logOut()  throws  {
+        try Auth.auth().signOut()
+    }
+    
+    func getProviders() throws -> [AuthProviderOption] {
+        guard let providerData = Auth.auth().currentUser?.providerData else {
+            throw URLError(.badServerResponse)
+        }
+        var providers : [AuthProviderOption] = []
+        
+        print(providerData)
+        for item in providerData {
+            if let option = AuthProviderOption(rawValue: item.providerID)  {
+                providers.append(option)
+            }else {
+                assertionFailure("Provider option not found: \(item)")
+            }
+        }
+        
+        return providers
+    }
+}
+
+extension AuthenticationRepository {
     @discardableResult
     func createUser(email : String, password: String) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
@@ -51,9 +80,15 @@ final class AuthenticationRepository {
     func resetPassword(email : String) async throws {
         try await Auth.auth().sendPasswordReset(withEmail: email)
     }
+}
+
+
+extension AuthenticationRepository {
     
-    
-    func logOut()  throws  {
-        try Auth.auth().signOut()
+    @discardableResult
+    func signInWithGoogle(data : GoogleSignInModel) async throws ->  AuthDataResultModel{
+        let credentinal = GoogleAuthProvider.credential(withIDToken: data.idToken, accessToken: data.accessToken)
+        let authDataResult = try await  Auth.auth().signIn(with: credentinal)
+        return AuthDataResultModel(user: authDataResult.user)
     }
 }

@@ -10,6 +10,17 @@ import SwiftUI
 
 final class SettingsViewModel: ObservableObject {
     
+    @Published var authProviders : [AuthProviderOption] = []
+    
+    func loadProviders () {
+        if let providers = try? AuthenticationRepository.shared.getProviders() {
+            authProviders = providers
+            
+            print(authProviders)
+        }
+    }
+    
+    
     func logOut() throws {
         try  AuthenticationRepository.shared.logOut()
     }
@@ -30,9 +41,29 @@ struct SettingsView: View {
     
     @StateObject private var viewModel = SettingsViewModel()
     @Binding var showSignInView: Bool
-    
+   
     var body: some View {
         List {
+            if(!viewModel.authProviders.contains(.google)) {
+                Section(content: {
+                    Button("Reset Password"){
+                        Task {
+                            do {
+                                try  await viewModel.resetPassword()
+                                showSignInView = true
+                                
+                                print("Password reseted")
+                            } catch {
+                                print("Error \(error)")
+                            }
+                        }
+                    }
+                }, header: {
+                    Text("Account actions")
+                })
+            }
+            
+            
             Button("LogOut"){
                 Task {
                     do {
@@ -44,20 +75,12 @@ struct SettingsView: View {
                 }
             }
             
-            Button("Reset Password"){
-                Task {
-                    do {
-                        try  await viewModel.resetPassword()
-                        showSignInView = true
-                        
-                        print("Password reseted")
-                    } catch {
-                        print("Error \(error)")
-                    }
-                }
-            }
+            
         }
         .navigationBarTitle("Settings")
+        .onAppear {
+            viewModel.loadProviders()
+        }
     }
 }
 

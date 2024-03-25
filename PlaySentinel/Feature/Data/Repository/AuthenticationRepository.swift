@@ -72,6 +72,7 @@ extension AuthenticationRepository {
         return AuthDataResultModel(user: authDataResult.user)
     }
     
+    @discardableResult
     func authUser(email : String, password: String) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
         return AuthDataResultModel(user: authDataResult.user)

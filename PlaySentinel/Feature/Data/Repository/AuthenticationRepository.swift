@@ -9,17 +9,6 @@ import Foundation
 import FirebaseAuth
 
 
-struct AuthDataResultModel {
-    let uid: String
-    let email: String?
-    let photoUrl: String?
-    
-    init(user: User) {
-        self.uid = user.uid
-        self.email = user.email
-        self.photoUrl = user.photoURL?.absoluteString
-    }
-}
 
 enum AuthProviderOption : String {
     case email = "password"
@@ -30,16 +19,12 @@ enum AuthProviderOption : String {
 final class AuthenticationRepository {
     static let shared = AuthenticationRepository()
     
-    private init() {
-        
-    }
-    
     func getAuthenticatedUser() throws -> AuthDataResultModel{
         guard let user = Auth.auth().currentUser else {
             throw URLError(.badServerResponse)
         }
         
-        return AuthDataResultModel(user: user)
+        return  AuthDataResultModel(user: user)
     }
     
     func logOut()  throws  {
@@ -51,8 +36,6 @@ final class AuthenticationRepository {
             throw URLError(.badServerResponse)
         }
         var providers : [AuthProviderOption] = []
-        
-        print(providerData)
         for item in providerData {
             if let option = AuthProviderOption(rawValue: item.providerID)  {
                 providers.append(option)
@@ -65,6 +48,8 @@ final class AuthenticationRepository {
     }
 }
 
+
+@MainActor
 extension AuthenticationRepository {
     @discardableResult
     func createUser(email : String, password: String) async throws -> AuthDataResultModel {
@@ -75,7 +60,8 @@ extension AuthenticationRepository {
     @discardableResult
     func authUser(email : String, password: String) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
-        return AuthDataResultModel(user: authDataResult.user)
+        let user = AuthDataResultModel(user: authDataResult.user)
+        return user
     }
     
     func resetPassword(email : String) async throws {
@@ -85,11 +71,10 @@ extension AuthenticationRepository {
 
 
 extension AuthenticationRepository {
-    
-    @discardableResult
-    func signInWithGoogle(data : GoogleSignInModel) async throws ->  AuthDataResultModel{
+    func signInWithGoogle(data : GoogleSignInModel) async throws ->  AuthDataResultModel {
         let credentinal = GoogleAuthProvider.credential(withIDToken: data.idToken, accessToken: data.accessToken)
         let authDataResult = try await  Auth.auth().signIn(with: credentinal)
-        return AuthDataResultModel(user: authDataResult.user)
+        let user = AuthDataResultModel(user: authDataResult.user)
+        return user
     }
 }

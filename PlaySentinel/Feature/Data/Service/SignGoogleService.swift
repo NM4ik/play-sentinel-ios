@@ -9,12 +9,6 @@ import Foundation
 import GoogleSignIn
 
 
-struct GoogleSignInModel {
-    let idToken : String
-    let accessToken : String
-    let name : String?
-    let email : String?
-}
 
 final class GoogleSignInService {
     

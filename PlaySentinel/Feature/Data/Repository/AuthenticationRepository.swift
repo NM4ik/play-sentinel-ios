@@ -19,16 +19,16 @@ enum AuthProviderOption : String {
 final class AuthenticationRepository {
     static let shared = AuthenticationRepository()
     
-    func getAuthenticatedUser() throws -> AuthDataResultModel{
+    func getAuthenticatedUser() throws -> AppUser{
         guard let user = Auth.auth().currentUser else {
             throw URLError(.badServerResponse)
         }
         
-        return  AuthDataResultModel(user: user)
+        return AppUser(fireUser: user)
     }
     
-    func logOut()  throws  {
-        try Auth.auth().signOut()
+    func logOut() {
+        try? Auth.auth().signOut()
     }
     
     func getProviders() throws -> [AuthProviderOption] {
@@ -51,19 +51,18 @@ final class AuthenticationRepository {
 
 @MainActor
 extension AuthenticationRepository {
-    @discardableResult
-    func createUser(email : String, password: String) async throws -> AuthDataResultModel {
-        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
-        return AuthDataResultModel(user: authDataResult.user)
-    }
+//    @discardableResult
+//    func createUser(email : String, password: String) async throws -> AppUser {
+//        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
+//        return AppUser(fireUser: authDataResult.user)
+//    }
     
-    @discardableResult
-    func authUser(email : String, password: String) async throws -> AuthDataResultModel {
-        let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
-        let user = AuthDataResultModel(user: authDataResult.user)
-        return user
-    }
-    
+//    @discardableResult
+//    func authUser(email : String, password: String) async throws -> AppUser {
+//        let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
+//        return AppUser(fireUser: authDataResult.user)
+//    }
+
     func resetPassword(email : String) async throws {
         try await Auth.auth().sendPasswordReset(withEmail: email)
     }
@@ -71,10 +70,10 @@ extension AuthenticationRepository {
 
 
 extension AuthenticationRepository {
-    func signInWithGoogle(data : GoogleSignInModel) async throws ->  AuthDataResultModel {
+    func signInWithGoogle(data : GoogleSignInModel) async throws ->  AppUser {
         let credentinal = GoogleAuthProvider.credential(withIDToken: data.idToken, accessToken: data.accessToken)
-        let authDataResult = try await  Auth.auth().signIn(with: credentinal)
-        let user = AuthDataResultModel(user: authDataResult.user)
-        return user
+        let user = try await  Auth.auth().signIn(with: credentinal)
+        
+        return AppUser(id: user.user.uid, email: user.user.email, photo: user.user.photoURL?.absoluteString, name: user.user.displayName)
     }
 }

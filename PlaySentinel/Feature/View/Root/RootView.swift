@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RootView: View {
-    @ObservedObject var rootViewModel : RootViewModel = RootViewModel()
+    @ObservedObject var rootViewModel : RootViewModel = RootViewModel.instance
     
     
     var body: some View {
@@ -25,11 +25,11 @@ struct RootView: View {
     @ViewBuilder func contentView() ->  some View {
         switch rootViewModel.state {
         case .authenticated:
-            GeneralView(user: RootViewModel.user)
+            GeneralView()
         case .loading:
             RootLoadingView()
         case .unAuthenticated:
-            AuthenticationView(rootViewModel: rootViewModel)
+            AuthenticationView()
         case .error:
             RootErrorView()
         }

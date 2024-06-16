@@ -18,12 +18,12 @@ final class GoogleSignInService {
             throw URLError(.cannotFindHost)
         }
         let result = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
-        guard let idToken = result.user.idToken?.tokenString else {
+        let user = result.user
+        guard let idToken = user.idToken?.tokenString else {
             throw URLError(.badServerResponse)
         }
         let accessToken = result.user.accessToken.tokenString
         
-        
-        return GoogleSignInModel(idToken: idToken, accessToken: accessToken, name: result.user.profile?.name, email: result.user.profile?.email)
+        return GoogleSignInModel(idToken: idToken, accessToken: accessToken, name: user.profile?.name, email: user.profile?.email)
     }
 }

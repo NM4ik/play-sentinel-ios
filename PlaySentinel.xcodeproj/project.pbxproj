@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		3E02F15E2BE9808F00541ACB /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02F15D2BE9808F00541ACB /* Snack.swift */; };
 		3E02F1602BE9841900541ACB /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02F15F2BE9841900541ACB /* LoadingIndicator.swift */; };
+		3E196A6A2C1DEDF600EAA606 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E196A692C1DEDF600EAA606 /* Game.swift */; };
 		3E2E85942BED7134006C5CFD /* RootLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2E85932BED7134006C5CFD /* RootLoadingView.swift */; };
 		3E2E85962BED71EF006C5CFD /* RootErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2E85952BED71EF006C5CFD /* RootErrorView.swift */; };
 		3E2E85992BED8F73006C5CFD /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2E85982BED8F73006C5CFD /* GeneralView.swift */; };
+		3E3096222BEED3A800FDAF49 /* CreateHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3096212BEED3A800FDAF49 /* CreateHubView.swift */; };
+		3E3096242BEED4CD00FDAF49 /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3096232BEED4CD00FDAF49 /* Hub.swift */; };
+		3E3096282BEED94A00FDAF49 /* HubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3096272BEED94A00FDAF49 /* HubRepository.swift */; };
+		3E30962C2BEEE1F100FDAF49 /* CreateHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30962B2BEEE1F100FDAF49 /* CreateHubViewModel.swift */; };
 		3E41095B2BAC426C003DA93B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3E41095A2BAC426C003DA93B /* FirebaseAuth */; };
 		3E41095F2BAC42DE003DA93B /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E41095E2BAC42DE003DA93B /* AuthenticationView.swift */; };
-		3E4109622BAC441E003DA93B /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4109612BAC441E003DA93B /* SignInEmailView.swift */; };
 		3E4109662BAC478C003DA93B /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4109652BAC478C003DA93B /* AuthenticationRepository.swift */; };
 		3E4109682BAC4C9F003DA93B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4109672BAC4C9F003DA93B /* RootView.swift */; };
 		3E41096B2BAC4EE8003DA93B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E41096A2BAC4EE8003DA93B /* SettingsView.swift */; };
@@ -23,21 +27,30 @@
 		3E4109772BAC8182003DA93B /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3E4109762BAC8182003DA93B /* GoogleSignInSwift */; };
 		3E41097B2BAC83CD003DA93B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E41097A2BAC83CD003DA93B /* Utils.swift */; };
 		3E41097F2BAC8A7F003DA93B /* SignGoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E41097E2BAC8A7F003DA93B /* SignGoogleService.swift */; };
+		3E5C346A2C1E1520008B6B1D /* CreateHubGamePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C34692C1E1520008B6B1D /* CreateHubGamePickerView.swift */; };
+		3E5C346C2C1E9F58008B6B1D /* CreateHubUserPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C346B2C1E9F58008B6B1D /* CreateHubUserPickerView.swift */; };
+		3E5C346E2C1EAD89008B6B1D /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C346D2C1EAD89008B6B1D /* PlayersView.swift */; };
+		3E5C34712C1EADC6008B6B1D /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C34702C1EADC6008B6B1D /* PlayersViewModel.swift */; };
+		3E5C34732C1F361E008B6B1D /* PlayerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C34722C1F361E008B6B1D /* PlayerCardView.swift */; };
+		3E5C34752C1F4744008B6B1D /* PlayersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C34742C1F4744008B6B1D /* PlayersListView.swift */; };
 		3E8C7C252BB1E83D0068F13B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3E8C7C242BB1E83D0068F13B /* FirebaseFirestore */; };
 		3E8C7C272BB1E83D0068F13B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3E8C7C262BB1E83D0068F13B /* FirebaseFirestoreSwift */; };
 		3E8C7C2A2BB1E8750068F13B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C7C292BB1E8750068F13B /* ProfileView.swift */; };
 		3E8C7C2D2BB22A5B0068F13B /* UserFirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C7C2C2BB22A5B0068F13B /* UserFirestoreService.swift */; };
 		3E8C7C302BB22A900068F13B /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C7C2F2BB22A900068F13B /* GoogleSignIn.swift */; };
-		3E8C7C322BB22AAD0068F13B /* AuthDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C7C312BB22AAD0068F13B /* AuthDataResult.swift */; };
-		3E8C7C352BB22E0F0068F13B /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C7C342BB22E0F0068F13B /* SignInEmailViewModel.swift */; };
 		3E8C7C382BB22E470068F13B /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C7C372BB22E470068F13B /* RootViewModel.swift */; };
 		3E8C7C3B2BB231B30068F13B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C7C3A2BB231B30068F13B /* ProfileViewModel.swift */; };
-		3E8C7C4D2BB332AF0068F13B /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C7C4C2BB332AF0068F13B /* DBUser.swift */; };
+		3E8C7C4D2BB332AF0068F13B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C7C4C2BB332AF0068F13B /* User.swift */; };
 		3EA244662BAB4736002A82A3 /* PlaySentinelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA244652BAB4736002A82A3 /* PlaySentinelApp.swift */; };
 		3EA2446A2BAB4738002A82A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA244692BAB4738002A82A3 /* Assets.xcassets */; };
 		3EA2446D2BAB4738002A82A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA2446C2BAB4738002A82A3 /* Preview Assets.xcassets */; };
 		3EA244772BAB48E8002A82A3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3EA244762BAB48E8002A82A3 /* FirebaseAnalytics */; };
 		3EA244792BAB48E8002A82A3 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3EA244782BAB48E8002A82A3 /* FirebaseAnalyticsSwift */; };
+		3EB0ADB82C14E17C004D7B13 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0ADB72C14E17C004D7B13 /* MainView.swift */; };
+		3EB0ADBA2C14E4CA004D7B13 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0ADB92C14E4CA004D7B13 /* MainViewModel.swift */; };
+		3EB0ADBC2C14E69E004D7B13 /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0ADBB2C14E69E004D7B13 /* MainRepository.swift */; };
+		3EB0ADBE2C14F66D004D7B13 /* HubCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0ADBD2C14F66D004D7B13 /* HubCardView.swift */; };
+		3EB0ADC02C14F83F004D7B13 /* HubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0ADBF2C14F83F004D7B13 /* HubListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,11 +69,15 @@
 /* Begin PBXFileReference section */
 		3E02F15D2BE9808F00541ACB /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 		3E02F15F2BE9841900541ACB /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		3E196A692C1DEDF600EAA606 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3E2E85932BED7134006C5CFD /* RootLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootLoadingView.swift; sourceTree = "<group>"; };
 		3E2E85952BED71EF006C5CFD /* RootErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootErrorView.swift; sourceTree = "<group>"; };
 		3E2E85982BED8F73006C5CFD /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
+		3E3096212BEED3A800FDAF49 /* CreateHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHubView.swift; sourceTree = "<group>"; };
+		3E3096232BEED4CD00FDAF49 /* Hub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hub.swift; sourceTree = "<group>"; };
+		3E3096272BEED94A00FDAF49 /* HubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubRepository.swift; sourceTree = "<group>"; };
+		3E30962B2BEEE1F100FDAF49 /* CreateHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHubViewModel.swift; sourceTree = "<group>"; };
 		3E41095E2BAC42DE003DA93B /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
-		3E4109612BAC441E003DA93B /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		3E4109652BAC478C003DA93B /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		3E4109672BAC4C9F003DA93B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		3E41096A2BAC4EE8003DA93B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -68,18 +85,27 @@
 		3E4109782BAC81B4003DA93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3E41097A2BAC83CD003DA93B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		3E41097E2BAC8A7F003DA93B /* SignGoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignGoogleService.swift; sourceTree = "<group>"; };
+		3E5C34692C1E1520008B6B1D /* CreateHubGamePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHubGamePickerView.swift; sourceTree = "<group>"; };
+		3E5C346B2C1E9F58008B6B1D /* CreateHubUserPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHubUserPickerView.swift; sourceTree = "<group>"; };
+		3E5C346D2C1EAD89008B6B1D /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
+		3E5C34702C1EADC6008B6B1D /* PlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
+		3E5C34722C1F361E008B6B1D /* PlayerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCardView.swift; sourceTree = "<group>"; };
+		3E5C34742C1F4744008B6B1D /* PlayersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListView.swift; sourceTree = "<group>"; };
 		3E8C7C292BB1E8750068F13B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3E8C7C2C2BB22A5B0068F13B /* UserFirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirestoreService.swift; sourceTree = "<group>"; };
 		3E8C7C2F2BB22A900068F13B /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
-		3E8C7C312BB22AAD0068F13B /* AuthDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResult.swift; sourceTree = "<group>"; };
-		3E8C7C342BB22E0F0068F13B /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
 		3E8C7C372BB22E470068F13B /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		3E8C7C3A2BB231B30068F13B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		3E8C7C4C2BB332AF0068F13B /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
+		3E8C7C4C2BB332AF0068F13B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3EA244622BAB4736002A82A3 /* PlaySentinel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySentinel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA244652BAB4736002A82A3 /* PlaySentinelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySentinelApp.swift; sourceTree = "<group>"; };
 		3EA244692BAB4738002A82A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EA2446C2BAB4738002A82A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3EB0ADB72C14E17C004D7B13 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3EB0ADB92C14E4CA004D7B13 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		3EB0ADBB2C14E69E004D7B13 /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
+		3EB0ADBD2C14F66D004D7B13 /* HubCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubCardView.swift; sourceTree = "<group>"; };
+		3EB0ADBF2C14F83F004D7B13 /* HubListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +145,17 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		3E3096202BEED36500FDAF49 /* CreateHub */ = {
+			isa = PBXGroup;
+			children = (
+				3E3096212BEED3A800FDAF49 /* CreateHubView.swift */,
+				3E5C346B2C1E9F58008B6B1D /* CreateHubUserPickerView.swift */,
+				3E30962B2BEEE1F100FDAF49 /* CreateHubViewModel.swift */,
+				3E5C34692C1E1520008B6B1D /* CreateHubGamePickerView.swift */,
+			);
+			path = CreateHub;
+			sourceTree = "<group>";
+		};
 		3E4109592BAC426C003DA93B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +175,9 @@
 		3E41095D2BAC42C7003DA93B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E5C346F2C1EADB5008B6B1D /* Players */,
+				3EB0ADB62C14E15D004D7B13 /* Main */,
+				3E3096202BEED36500FDAF49 /* CreateHub */,
 				3E2E85972BED8F5C006C5CFD /* General */,
 				3E2E85922BED2875006C5CFD /* Root */,
 				3E8C7C282BB1E86A0068F13B /* Profile */,
@@ -151,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				3E8C7C362BB22E2D0068F13B /* Authentication */,
-				3E8C7C332BB22DF50068F13B /* SignIn */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -170,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				3E4109652BAC478C003DA93B /* AuthenticationRepository.swift */,
+				3E3096272BEED94A00FDAF49 /* HubRepository.swift */,
+				3EB0ADBB2C14E69E004D7B13 /* MainRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -201,6 +242,17 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		3E5C346F2C1EADB5008B6B1D /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				3E5C346D2C1EAD89008B6B1D /* PlayersView.swift */,
+				3E5C34702C1EADC6008B6B1D /* PlayersViewModel.swift */,
+				3E5C34722C1F361E008B6B1D /* PlayerCardView.swift */,
+				3E5C34742C1F4744008B6B1D /* PlayersListView.swift */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
 		3E8C7C282BB1E86A0068F13B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,19 +266,11 @@
 			isa = PBXGroup;
 			children = (
 				3E8C7C2F2BB22A900068F13B /* GoogleSignIn.swift */,
-				3E8C7C312BB22AAD0068F13B /* AuthDataResult.swift */,
-				3E8C7C4C2BB332AF0068F13B /* DBUser.swift */,
+				3E8C7C4C2BB332AF0068F13B /* User.swift */,
+				3E3096232BEED4CD00FDAF49 /* Hub.swift */,
+				3E196A692C1DEDF600EAA606 /* Game.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		3E8C7C332BB22DF50068F13B /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				3E4109612BAC441E003DA93B /* SignInEmailView.swift */,
-				3E8C7C342BB22E0F0068F13B /* SignInEmailViewModel.swift */,
-			);
-			path = SignIn;
 			sourceTree = "<group>";
 		};
 		3E8C7C362BB22E2D0068F13B /* Authentication */ = {
@@ -274,6 +318,17 @@
 				3EA2446C2BAB4738002A82A3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3EB0ADB62C14E15D004D7B13 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3EB0ADB72C14E17C004D7B13 /* MainView.swift */,
+				3EB0ADB92C14E4CA004D7B13 /* MainViewModel.swift */,
+				3EB0ADBD2C14F66D004D7B13 /* HubCardView.swift */,
+				3EB0ADBF2C14F83F004D7B13 /* HubListView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,27 +416,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EB0ADBC2C14E69E004D7B13 /* MainRepository.swift in Sources */,
 				3E02F1602BE9841900541ACB /* LoadingIndicator.swift in Sources */,
+				3EB0ADB82C14E17C004D7B13 /* MainView.swift in Sources */,
 				3E8C7C302BB22A900068F13B /* GoogleSignIn.swift in Sources */,
 				3E41096B2BAC4EE8003DA93B /* SettingsView.swift in Sources */,
 				3E8C7C382BB22E470068F13B /* RootViewModel.swift in Sources */,
 				3E8C7C2A2BB1E8750068F13B /* ProfileView.swift in Sources */,
+				3E5C34712C1EADC6008B6B1D /* PlayersViewModel.swift in Sources */,
+				3E3096282BEED94A00FDAF49 /* HubRepository.swift in Sources */,
+				3E5C34732C1F361E008B6B1D /* PlayerCardView.swift in Sources */,
 				3E8C7C2D2BB22A5B0068F13B /* UserFirestoreService.swift in Sources */,
 				3E41097F2BAC8A7F003DA93B /* SignGoogleService.swift in Sources */,
 				3E2E85962BED71EF006C5CFD /* RootErrorView.swift in Sources */,
-				3E8C7C352BB22E0F0068F13B /* SignInEmailViewModel.swift in Sources */,
+				3E5C346E2C1EAD89008B6B1D /* PlayersView.swift in Sources */,
+				3EB0ADBE2C14F66D004D7B13 /* HubCardView.swift in Sources */,
+				3E3096222BEED3A800FDAF49 /* CreateHubView.swift in Sources */,
 				3E02F15E2BE9808F00541ACB /* Snack.swift in Sources */,
 				3EA244662BAB4736002A82A3 /* PlaySentinelApp.swift in Sources */,
-				3E8C7C322BB22AAD0068F13B /* AuthDataResult.swift in Sources */,
 				3E8C7C3B2BB231B30068F13B /* ProfileViewModel.swift in Sources */,
 				3E4109682BAC4C9F003DA93B /* RootView.swift in Sources */,
+				3EB0ADBA2C14E4CA004D7B13 /* MainViewModel.swift in Sources */,
+				3E30962C2BEEE1F100FDAF49 /* CreateHubViewModel.swift in Sources */,
 				3E2E85942BED7134006C5CFD /* RootLoadingView.swift in Sources */,
+				3E5C34752C1F4744008B6B1D /* PlayersListView.swift in Sources */,
+				3E5C346C2C1E9F58008B6B1D /* CreateHubUserPickerView.swift in Sources */,
+				3E196A6A2C1DEDF600EAA606 /* Game.swift in Sources */,
 				3E2E85992BED8F73006C5CFD /* GeneralView.swift in Sources */,
 				3E41095F2BAC42DE003DA93B /* AuthenticationView.swift in Sources */,
-				3E8C7C4D2BB332AF0068F13B /* DBUser.swift in Sources */,
+				3EB0ADC02C14F83F004D7B13 /* HubListView.swift in Sources */,
+				3E8C7C4D2BB332AF0068F13B /* User.swift in Sources */,
+				3E3096242BEED4CD00FDAF49 /* Hub.swift in Sources */,
 				3E4109662BAC478C003DA93B /* AuthenticationRepository.swift in Sources */,
-				3E4109622BAC441E003DA93B /* SignInEmailView.swift in Sources */,
 				3E41097B2BAC83CD003DA93B /* Utils.swift in Sources */,
+				3E5C346A2C1E1520008B6B1D /* CreateHubGamePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

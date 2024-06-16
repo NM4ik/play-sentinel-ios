@@ -9,18 +9,17 @@ import SwiftUI
 
 
 struct GeneralView: View {
-    let user : DBUser?
     @State private var currentTab = 0
     
     var body: some View {
         TabView(selection: $currentTab) {
-            Text("Home")
+            MainView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Профиль")
                 }.tag(0)
             
-            ProfileView(user: user)
+            ProfileView(user: RootViewModel.instance.user)
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Профиль")
@@ -31,6 +30,6 @@ struct GeneralView: View {
 
 #Preview {
     NavigationStack {
-        GeneralView(user: DBUser(id: "123", email: "TEST", photo: "test"))
+        GeneralView()
     }
 }

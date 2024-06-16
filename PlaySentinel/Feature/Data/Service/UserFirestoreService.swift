@@ -14,12 +14,7 @@ final class UserFirestoreService {
     
     static let shared = UserFirestoreService()
     
-    
     static let usersCollectionKey = "users"
-    static let userIdKey = "user_id"
-    static let userEmailKey = "email"
-    static let userPhotoUrlKey = "photo"
-    static let dateCreatedKey = "date_created"
     
     private let userCollection = Firestore.firestore().collection(UserFirestoreService.usersCollectionKey)
     
@@ -39,7 +34,7 @@ final class UserFirestoreService {
         return encoder
     }()
     
-    func createNewUser(user: DBUser) async throws -> Bool {
+    func createNewUser(user: AppUser) async throws -> Bool {
         let encoder = JSONEncoder()
         do {
             let jsonData = try encoder.encode(user)
@@ -47,7 +42,7 @@ final class UserFirestoreService {
                 fatalError("Failed to convert JSON data to dictionary")
             }
             
-            try await userDocument(id: user.userId).setData(jsonObject)
+            try await userDocument(id: user.id).setData(jsonObject)
             return true
         } catch {
             print("Error encoding struct: \(error)")
@@ -57,8 +52,24 @@ final class UserFirestoreService {
     
     
     
-    func getUser(id : String) async throws -> DBUser? {
-        try await userDocument(id: id).getDocument(as: DBUser.self, decoder: decoder)
+    func getUser(id : String) async throws -> AppUser? {
+        print("id - \(id)")
+        return try await userDocument(id: id).getDocument(as: AppUser.self, decoder: decoder)
+    }
+    
+    func getUsers() async throws -> [AppUser] {
+        
+        var users = [AppUser]()
+        let querySnapshot = try await userCollection.getDocuments()
+        for doc in querySnapshot.documents {
+            do {
+                if let model = try? doc.data(as: AppUser.self) {
+                    users.append(model)
+                }
+            }
+        }
+        
+        return users
     }
     
 }

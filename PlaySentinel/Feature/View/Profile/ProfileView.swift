@@ -9,16 +9,15 @@ import SwiftUI
 
 
 struct ProfileView: View {
-    let user : DBUser?
+    let user : AppUser?
     
-    init(user: DBUser?) {
+    init(user: AppUser?) {
+        print("user - \(String(describing: user))")
         self.user = user
-        print("init lava view")
     }
     
     var body: some View {
-        
-        ZStack {
+        VStack {
             List {
                 if user != nil {
                     HStack {
@@ -39,6 +38,12 @@ struct ProfileView: View {
                         Text("Email: \(user?.email ?? "No data")")
                     }.listRowInsets(EdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10))
                 }
+                
+                Section {
+                    Text("Выйти из аккаунта").foregroundColor(.red).onTapGesture {
+                        RootViewModel.instance.logout()
+                    }
+                }
             }
             .task {
                 print("TASK INIT")
@@ -47,7 +52,7 @@ struct ProfileView: View {
             }
             .onAppear {
                 print("APPEAR INIT")
-            }
+            } .background(Color(.systemBackground))
             //            .toolbar{
             //                ToolbarItem(placement: .navigationBarTrailing, content: {
             //                    NavigationLink {
@@ -62,12 +67,25 @@ struct ProfileView: View {
             //            if isLoading {
             //                LoadingIndicatorView()
             //            }
+            
+            //            Text("Выйти из аккаунта").foregroundColor(.red)
+            //            Button(action: {
+            //                print("qweqwe")
+            //            }) {
+            //                Text("Выйти из аккаунта")
+            //                    .frame(maxWidth: .infinity, maxHeight: 20)
+            //                    .padding()
+            //                    .background(Color.white)
+            //                    .foregroundColor(.red)
+            //                    .cornerRadius(10)
+            //                    .padding(.horizontal, 20)
+            //            }
         }
     }
 }
 
 #Preview {
     NavigationStack {
-        ProfileView(user: DBUser(id: "123", email: "mockUserMail@mail.com", photo: "https://h5p.org/sites/default/files/h5p/content/1209180/images/file-6113d5f8845dc.jpeg"))
+        ProfileView(user: AppUser(id: "123", email: "mockUserMail@mail.com", photo: "https://h5p.org/sites/default/files/h5p/content/1209180/images/file-6113d5f8845dc.jpeg", name: nil))
     }
 }

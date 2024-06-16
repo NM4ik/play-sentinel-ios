@@ -22,7 +22,7 @@ final class SettingsViewModel: ObservableObject {
     
     
     func logOut() throws {
-        try  AuthenticationRepository.shared.logOut()
+       AuthenticationRepository.shared.logOut()
     }
     
     func resetPassword() async throws {
